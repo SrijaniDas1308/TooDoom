@@ -1,6 +1,6 @@
-
 var numOfDrumBtns = document.querySelectorAll(".drum").length;
 
+// For Mouse
 for (var i = 0; i < numOfDrumBtns; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         var drumInnerHTML = this.innerHTML;
@@ -8,13 +8,14 @@ for (var i = 0; i < numOfDrumBtns; i++) {
         drumAnime(drumInnerHTML)
     });
 }
-
+// For Keyboard
 document.addEventListener("keydown", function(event)
 {
     drumSound(event.key);
     drumAnime(event.key);
 });
 
+// To get sounds
 function drumSound(key)
 {
     switch (key) {
@@ -52,6 +53,7 @@ function drumSound(key)
     }
 }
 
+// To get Animation after Keypress/Click
 function drumAnime(currKey) {
     var activeDrum = document.querySelector("."+currKey);
     activeDrum.classList.add("pressed");
